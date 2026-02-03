@@ -1,0 +1,8 @@
+/* En css/main.css */
+.content-section {
+    display: none; /* Oculto por defecto */
+}
+
+.content-section.active {
+    display: block; /* Solo la activa ocupa espacio */
+}
