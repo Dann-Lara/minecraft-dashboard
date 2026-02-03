@@ -1,0 +1,74 @@
+<style>
+  /* Efectos de Rareza y Brillo */
+  .resource-card {
+    transition: all 0.4s cubic-bezier(0.4, 0, 0.2, 1);
+  }
+
+  /* Brillo para items Legendarios (Púrpura/Dorado) */
+  .item-legendary {
+    position: relative;
+    overflow: hidden;
+  }
+
+  .item-legendary::before {
+    content: '';
+    position: absolute;
+    top: -50%; left: -50%;
+    width: 200%; height: 200%;
+    background: radial-gradient(circle, rgba(168, 85, 247, 0.08) 0%, transparent 60%);
+    animation: rotate-bg 12s linear infinite;
+    pointer-events: none;
+  }
+
+  @keyframes rotate-bg {
+    from { transform: rotate(0deg); }
+    to { transform: rotate(360deg); }
+  }
+
+  /* Estados Activos */
+  .resource-card.active {
+    background: rgba(16, 185, 129, 0.04) !important;
+    border-color: rgba(16, 185, 129, 0.4) !important;
+  }
+
+  /* Animación de los Iconos */
+  .resource-card:hover .icon-container {
+    transform: scale(1.1) translateY(-5px);
+    filter: drop-shadow(0 0 12px currentColor);
+  }
+
+  .status-check {
+    transition: all 0.5s ease;
+  }
+</style>
+
+<div class="max-w-7xl mx-auto space-y-10">
+  <div class="flex flex-col md:flex-row md:items-end justify-between gap-6 border-b border-slate-800 pb-10">
+    <div class="space-y-2">
+      <div class="flex items-center gap-3">
+        <span class="bg-accent/10 text-accent px-3 py-1 rounded-full text-[10px] font-black tracking-[0.3em] uppercase">Manual de Campo</span>
+        <span class="bg-purple-500/10 text-purple-400 px-3 py-1 rounded-full text-[10px] font-black tracking-[0.3em] uppercase">v1.21 Ready</span>
+      </div>
+      <h2 class="text-4xl font-black text-white italic tracking-tighter uppercase">Guía de Extracción</h2>
+      <p class="text-slate-500 text-sm max-w-xl leading-relaxed">
+        Protocolos de localización para recursos básicos y reliquias legendarias. Haz clic para marcar como "Suministro Asegurado".
+      </p>
+    </div>
+    
+    <div class="hidden lg:block bg-slate-900/50 border border-slate-800 p-4 rounded-2xl">
+      <div class="flex gap-4">
+        <div class="text-center px-4 border-r border-slate-800">
+          <p class="text-[9px] font-bold text-slate-500 uppercase mb-1">Total Items</p>
+          <p id="res-total-count" class="text-xl font-mono text-white">0</p>
+        </div>
+        <div class="text-center px-4">
+          <p class="text-[9px] font-bold text-slate-500 uppercase mb-1">Recolectados</p>
+          <p id="res-collected-count" class="text-xl font-mono text-accent">0</p>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <div id="resources-grid" class="grid grid-cols-1 md:grid-cols-2 xl:grid-cols-3 gap-6">
+    </div>
+</div>

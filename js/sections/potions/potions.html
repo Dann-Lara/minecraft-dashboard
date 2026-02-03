@@ -1,0 +1,91 @@
+<style>
+  /* Animación de burbujeo para pociones listas */
+  @keyframes bubble {
+    0%, 100% { transform: translateY(0px); }
+    50% { transform: translateY(-5px); }
+  }
+
+  .potion-card.active .potion-icon {
+    animation: bubble 2s ease-in-out infinite;
+    filter: drop-shadow(0 0 15px currentColor);
+    border-color: currentColor;
+  }
+
+  /* Tooltip Container */
+  .ingredient-tag {
+    position: relative;
+    display: inline-flex;
+    align-items: center;
+  }
+
+  /* El cuadro flotante (Tooltip) */
+  .tooltip-box {
+    visibility: hidden;
+    position: absolute;
+    bottom: 130%;
+    left: 50%;
+    transform: translateX(-50%);
+    background: #0f172a; /* Slate 900 */
+    border: 1px solid #334155; /* Slate 700 */
+    color: #f1f5f9;
+    padding: 10px;
+    border-radius: 8px;
+    font-size: 11px;
+    width: 180px;
+    text-align: center;
+    z-index: 100;
+    box-shadow: 0 10px 20px rgba(0,0,0,0.5);
+    opacity: 0;
+    transition: all 0.3s ease;
+    pointer-events: none;
+    line-height: 1.4;
+  }
+
+  /* Flecha del Tooltip */
+  .tooltip-box::after {
+    content: "";
+    position: absolute;
+    top: 100%;
+    left: 50%;
+    margin-left: -5px;
+    border-width: 5px;
+    border-style: solid;
+    border-color: #334155 transparent transparent transparent;
+  }
+
+  /* Mostrar Tooltip al hacer Hover */
+  .ingredient-tag:hover .tooltip-box {
+    visibility: visible;
+    opacity: 1;
+    bottom: 145%;
+  }
+
+  /* Colores por tipo de poción (borde lateral) */
+  .potion-card[data-type="fire"] { border-left: 4px solid #f97316; }
+  .potion-card[data-type="strength"] { border-left: 4px solid #ef4444; }
+  .potion-card[data-type="speed"] { border-left: 4px solid #38bdf8; }
+  .potion-card[data-type="night"] { border-left: 4px solid #a855f7; }
+  .potion-card[data-type="water"] { border-left: 4px solid #3b82f6; }
+  .potion-card[data-type="turtle"] { border-left: 4px solid #16a34a; }
+  .potion-card[data-type="regen"] { border-left: 4px solid #f472b6; }
+</style>
+
+<div class="max-w-6xl mx-auto space-y-10">
+  <div class="flex flex-col md:flex-row md:items-end justify-between gap-6 border-b border-slate-800 pb-10">
+    <div class="space-y-2">
+      <h2 class="text-4xl font-black text-white italic tracking-tighter uppercase">Estación de Alquimia</h2>
+      <p class="text-slate-500 text-sm font-bold tracking-[0.2em] uppercase mt-2">
+        Vademécum de brebajes avanzados y guía de crafteo
+      </p>
+    </div>
+    <div class="bg-blue-500/10 border border-blue-500/20 p-4 rounded-2xl flex items-center gap-4">
+      <span class="text-2xl">💡</span>
+      <p class="text-[10px] text-blue-400 font-bold leading-tight uppercase">
+        Pasa el cursor sobre los ingredientes <br>para ver la receta de obtención.
+      </p>
+    </div>
+  </div>
+
+  <div id="potions-grid" class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-2 xl:grid-cols-3 gap-6">
+    </div>
+</div>

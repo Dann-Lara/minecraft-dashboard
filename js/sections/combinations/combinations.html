@@ -1,0 +1,95 @@
+<style>
+
+  /* Conector visual lateral perfectamente alineado al centro del círculo */
+  .step-line {
+    position: absolute;
+    left: 15px; /* (w-8 = 32px) / 2 = 16px - 1px de grosor */
+    top: 32px;
+    bottom: -12px;
+    width: 2px;
+    background: #3b82f6;
+    opacity: 0.15;
+    z-index: 0;
+  }
+
+  .combo-card {
+    background: rgba(15, 23, 42, 0.6);
+    backdrop-filter: blur(12px);
+  }
+
+  /* Forzar que todos los iconos y números midan lo mismo */
+  .unit-box {
+    width: 32px;
+    height: 32px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    flex-shrink: 0;
+  }
+
+  /* Animación sutil al completar */
+  .step-complete .step-box {
+    background: #3b82f6;
+    border-color: #60a5fa;
+    box-shadow: 0 0 15px rgba(59, 130, 246, 0.3);
+  }
+  /* Conector visual lateral */
+  .step-line {
+    position: absolute;
+    left: 11px;
+    top: 24px;
+    bottom: -24px;
+    width: 2px;
+    background: linear-gradient(to bottom, #3b82f6 0%, transparent 100%);
+    opacity: 0.2;
+  }
+
+  .combo-card {
+    background: linear-gradient(145deg, rgba(15, 23, 42, 0.9) 0%, rgba(30, 41, 59, 0.4) 100%);
+    backdrop-filter: blur(10px);
+  }
+
+  .operation-badge {
+    background: rgba(59, 130, 246, 0.1);
+    border: 1px solid rgba(59, 130, 246, 0.2);
+    color: #60a5fa;
+    font-size: 9px;
+    padding: 2px 6px;
+    border-radius: 4px;
+    text-transform: uppercase;
+    font-weight: 900;
+  }
+
+  .item-pill {
+    background: #0f172a;
+    border: 1px solid #1e293b;
+    padding: 4px 8px;
+    border-radius: 6px;
+    font-size: 11px;
+    color: #cbd5e1;
+    display: inline-block;
+  }
+
+  .plus-sign {
+    color: #3b82f6;
+    font-weight: 900;
+    margin: 0 4px;
+  }
+</style>
+
+<div class="max-w-6xl mx-auto space-y-10">
+  <div class="flex flex-col md:flex-row justify-between items-center border-b border-slate-800 pb-8 gap-4">
+    <div>
+      <h2 class="text-4xl font-black text-white italic tracking-tighter uppercase text-center md:text-left">Manual de Forja</h2>
+      <p class="text-slate-500 text-sm font-bold tracking-[0.3em] uppercase mt-2 text-center md:text-left">Algoritmo de Combinación Binaria</p>
+    </div>
+    <div class="bg-blue-500/10 border border-blue-500/20 p-4 rounded-xl flex items-center gap-3">
+      <span class="text-blue-400 text-xl">🧪</span>
+      <p class="text-[10px] text-blue-300 font-bold uppercase leading-tight">
+        Combina los libros entre sí <br>antes de aplicarlos al objeto.
+      </p>
+    </div>
+  </div>
+
+  <div id="combinations-grid" class="grid grid-cols-1 lg:grid-cols-2 gap-10"></div>
+</div>

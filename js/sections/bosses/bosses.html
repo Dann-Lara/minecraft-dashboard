@@ -1,0 +1,50 @@
+<style>
+  /* Efecto de "Objetivo Eliminado" */
+  .boss-card.defeated {
+    border-color: #10b981 !important;
+    background: rgba(16, 185, 129, 0.05) !important;
+    opacity: 0.8;
+  }
+  
+  .boss-card.defeated .boss-img {
+    filter: grayscale(1) sepia(1) hue-rotate(70deg);
+  }
+
+  .boss-img {
+    transition: all 0.5s ease;
+    image-rendering: pixelated; /* Estilo Minecraft */
+  }
+
+  .diff-badge {
+    font-size: 9px;
+    padding: 2px 8px;
+    border-radius: 4px;
+    font-weight: 900;
+    text-transform: uppercase;
+  }
+
+  /* Scrollbar interno para la táctica si es larga */
+  .tactics-box {
+    scrollbar-width: thin;
+    scrollbar-color: #334155 transparent;
+  }
+</style>
+
+<div class="max-w-7xl mx-auto space-y-10">
+  <div class="flex flex-col md:flex-row md:items-end justify-between gap-6 border-b border-slate-800 pb-10">
+    <div class="space-y-2">
+      <h2 class="text-4xl font-black text-white italic tracking-tighter uppercase">Registro de Caza</h2>
+      <p class="text-slate-500 text-sm font-bold tracking-[0.2em] uppercase mt-2">
+        Orden de progresión recomendado para el End-Game
+      </p>
+    </div>
+    <div class="bg-red-500/10 border border-red-500/20 p-4 rounded-2xl">
+      <p class="text-[10px] text-red-500 font-bold leading-tight uppercase">
+        ⚠️ ATENCIÓN: No enfrentes al Wither sin <br>pociones de Regeneración y Fuerza II.
+      </p>
+    </div>
+  </div>
+
+  <div id="bosses-grid" class="grid grid-cols-1 xl:grid-cols-2 gap-8">
+    </div>
+</div>

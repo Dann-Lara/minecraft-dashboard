@@ -1,0 +1,62 @@
+<style>
+  /* Efecto de brillo para libros activos */
+  .ench-item.active {
+    background: rgba(168, 85, 247, 0.15); /* Púrpura */
+    border-color: rgba(168, 85, 247, 0.4);
+    box-shadow: 0 0 15px rgba(168, 85, 247, 0.1);
+  }
+
+  .ench-item.active .check-indicator {
+    background-color: #a855f7;
+    border-color: #a855f7;
+    transform: scale(1.1);
+  }
+
+  /* Transición suave para el texto */
+  .ench-item .label {
+    transition: all 0.3s ease;
+  }
+  .ench-item.active .label {
+    color: #e9d5ff;
+    text-shadow: 0 0 8px rgba(168, 85, 247, 0.5);
+  }
+
+  /* Estilo para la descripción táctica */
+  .ench-item p {
+    display: -webkit-box;
+    -webkit-line-clamp: 2; /* Limita a 2 líneas para mantener el grid parejo */
+    -webkit-box-orient: vertical;
+    overflow: hidden;
+  }
+
+  .ench-item.active p {
+    color: rgba(168, 85, 247, 0.6); /* Color púrpura suave cuando está activo */
+  }
+
+  /* Hover effect sutil para elevar el item */
+  .ench-item:hover {
+    transform: translateX(4px);
+    background: rgba(30, 41, 59, 0.6);
+  }
+</style>
+
+<div class="max-w-7xl mx-auto space-y-10">
+  <div class="bg-card/50 border border-slate-800 p-6 rounded-3xl flex flex-col md:flex-row items-center justify-between gap-6">
+    <div>
+      <h2 class="text-3xl font-black text-white italic tracking-tighter uppercase">Librería Sugerida</h2>
+      <p class="text-slate-500 text-xs font-bold tracking-widest uppercase">Checklist de tradeo con aldeanos</p>
+    </div>
+    <div class="w-full md:w-64 space-y-2">
+      <div class="flex justify-between text-[10px] font-black text-slate-400 uppercase tracking-widest">
+        <span>Progreso Total</span>
+        <span id="ench-percent">0%</span>
+      </div>
+      <div class="h-2 bg-slate-800 rounded-full overflow-hidden">
+        <div id="ench-bar" class="h-full bg-gradient-to-r from-accent to-purple-500 transition-all duration-700 w-0"></div>
+      </div>
+    </div>
+  </div>
+
+  <div id="enchantments-grid" class="grid grid-cols-1 md:grid-cols-2 xl:grid-cols-4 gap-6">
+    </div>
+</div>

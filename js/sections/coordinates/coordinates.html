@@ -1,0 +1,43 @@
+<div class="flex flex-col items-center text-center mb-10">
+  <span class="bg-emerald-500/10 text-emerald-500 px-3 py-1 rounded-full text-[10px] font-bold tracking-[0.2em] mb-3 uppercase">Waypoints System</span>
+  <h2 class="text-4xl font-black text-white italic uppercase tracking-tighter">Guía de <span class="text-emerald-500">Supervivencia</span></h2>
+  <p class="text-slate-500 text-xs mt-2 max-w-md">Establece tus puntos críticos y sigue el orden lógico de conquista del mundo.</p>
+</div>
+
+<div class="max-w-5xl mx-auto mb-10 p-6 bg-emerald-500/5 border border-emerald-500/20 rounded-[2rem] flex flex-col md:flex-row items-center gap-6">
+  <div class="text-3xl">
+    <img src="assets/icons/map.png" class="w-5 h-5 object-contain group-hover:scale-210 transition-transform" alt="Home">
+  </div>
+  <div class="flex-1 text-center md:text-left">
+    <h4 class="text-white font-black uppercase text-sm italic">Localizador de Semillas</h4>
+    <p class="text-slate-400 text-[10px]">Antes de establecer la base, busca un bioma óptimo con Aldea y Puesto Pillager cerca.</p>
+  </div>
+  <a href="https://www.chunkbase.com/apps/seed-map" target="_blank" class="px-6 py-3 bg-emerald-600 hover:bg-emerald-500 text-white text-[10px] font-black uppercase tracking-widest rounded-xl transition-all shadow-lg shadow-emerald-900/20">
+    Abrir Chunkbase
+  </a>
+</div>
+
+<div id="coords-grid" class="grid grid-cols-1 lg:grid-cols-1 gap-8 max-w-5xl mx-auto mb-20">
+  </div>
+
+<style>
+    /* Quitar flechas en Chrome, Safari, Edge y Opera */
+  input::-webkit-outer-spin-button,
+  input::-webkit-inner-spin-button {
+    -webkit-appearance: none;
+    margin: 0;
+  }
+
+  /* Quitar flechas en Firefox */
+  input[type=number] {
+    -moz-appearance: textfield;
+  }
+
+  /* Estilo extra para que los inputs de coordenadas se vean limpios */
+  .no-spin {
+    background: transparent;
+    border: none;
+    outline: none;
+    text-align: center;
+  }
+</style>
